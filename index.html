@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="x-dns-prefetch-control" content="on">
+		<link rel="stylesheet" href="./kuangjia/bootstrap.min.css">
+		<link rel="stylesheet" href="./kuangjia/node_modules/Hui-iconfont/1.0.7/iconfont.css">
+		<link rel="stylesheet" href="./kuangjia/node_modules/jquery-ui-1.12.1/jquery-ui.min.css">
+		<link rel="stylesheet" href="./kuangjia/style.css">
+		<style>
+			p {
+				 margin-bottom: 0px; 
+			}
+			a{text-decoration:none}
+			a:hover, a:focus {
+				text-decoration: none;
+				color: #fb923f;
+			}
+			.as a:hover{
+				color: #fb923f;
+			}
+			.as{
+				position: relative;
+			}
+			.as ul li a{
+				color: #333;
+			}
+			.caidan{
+				width:300px;
+				background:#fff;
+				border: 1px solid #ccc;
+				top: 59px;
+			}
+			#header{
+				width: 100%;
+				position: fixed;
+				z-index: 999999;
+				padding-top:20px; 
+
+			} 
+			.logo{
+				width: 30%
+			}
+			.logo img{
+				width: 180px;
+				height: 48px;
+
+			}
+			#header ul li{
+				float: left;
+				line-height: 48px;
+				font-size: 14px;
+				margin-left: 30px;
+				text-align: center;
+				font-weight: bold;
+			}
+			ul li a{
+				color: #fff;
+			}
+			.sblack{
+				color:#333;
+			}
+			.sfocus{
+				color: #fb923f;
+			}
+			/*.container{
+				width: 80%;
+				margin: 0 auto;
+				position: relative;
+				overflow: hidden;
+			}*/
+			.orange {
+				color: #fff;
+				background-color: #fb923f;
+				border: 1px solid #fb923f;
+			}
+			.anniu {
+				width: 120px;
+				height: 40px;
+				line-height: 40px;
+				border-radius: 20px;
+				display: inline-block;
+				text-align: center;
+				cursor: pointer;
+			}
+			.anniu:hover {
+				color: #fff;
+				background-color: #f17819;
+				border: 1px solid #fb923f!important;
+			}
+			
+			.white {
+				color: #fb923f;
+				background-color: #fff;
+				border: 1px solid #fb923f;
+			}
+			.cover {
+				width: 100%;
+				height: 100%;
+				background: #3b496b;
+				background: rgba(59,73,107,.8);
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#video{
+				position: relative;
+			}
+			.cover .article {
+				position: absolute;
+				left: 0;
+				top: 50%;
+				width: 100%;
+				height: auto;
+				margin-top: -81px;
+				text-align: center;
+				color: white;
+			}
+			h1 {
+				font-size: 48px;
+				font-weight: 300;
+			}
+			.cover .btn-exp {
+				color: #fff;
+				background-color: #fb923f;
+				width: 180px;
+				height: 50px;
+				line-height: 50px;
+				border-radius: 25px;
+				display: inline-block;
+				text-align: center;
+				cursor: pointer;
+				-webkit-box-shadow: 0 3px 8px rgba(0,0,38,.4);
+				box-shadow: 0 3px 8px rgba(0,0,38,.4);
+				margin-top:10%; 
+			}
+			.j-btn-exp:hover{
+				background-color: #f17819;
+				border: 1px solid #fb923f!important;
+			}
+			.stitle{
+				font-weight: bold;
+				color: #222;
+				font-size: 36px;
+				font-family: '微软雅黑';
+				display: block;
+				text-align: center;
+				line-height: 2;
+			}
+			.ssubhead{
+				text-align: center;
+				font-weight: bold;
+				color: #999;
+			}
+			.bg4{
+				background: url(images/bg4.png) no-repeat;
+				height: 861px;
+			}
+			.synopsis{
+				line-height: 30px;
+			}
+			.feiji{
+				width: 90%;
+				margin: 0 auto;
+				height:407px;
+				background: url(images/feiji.png) no-repeat;
+				background-size:100%;
+				position: relative;
+				top:40px;
+			}
+			/*.dizuo{
+				width: 100%;
+				height:200px;
+				background: url(images/dizuo.png);
+				background-size:contain;
+			}*/
+			.dizuo{
+				width: 90%;
+				margin: 0px auto;
+			}
+			.feismall{
+				position: absolute;
+				width: 30px;
+				height:30px;
+				background: #000;
+				border: 3px solid #fff;
+				border-radius: 50%;
+				text-align: center;
+				color: #fff;
+				line-height: 30px;
+			}
+			.feismall1{
+				right: 18%;
+				top:30px;
+				display: none;
+			}
+			.feismall2{
+				right: 18%;
+				top:30px;
+				display: none;
+			}
+			.feismall3{
+				right: 18%;
+				top:30px;
+				display: none;
+			}
+			.sthree{
+				width: 33%;
+				height: 80px;
+			}
+			.sthree ul{
+				height: 30px;
+			}
+			.sthree ul li{
+				float: left;
+				margin-left: 3px;
+				width: 30px;
+			}
+			.sthree ul li img{
+				width: 100%;
+			}
+			.sthree p{
+				width: 100px;
+				text-align: center;
+				font-size: 15px;
+				font-weight: 800;
+				position: relative;
+				bottom:20px;
+			}
+			.sthree p i{
+				font-family:Arial;
+				font-size: 20px;
+				font-weight: 800;
+			}
+			.w-copyright {
+				height: 90px;
+				background: #272f42;
+			}
+			.w-copyright .logo {
+				float: left;
+				width: 180px;
+				height: 48px;
+				margin-top: 21px;
+			}
+			.w-copyright .copyright, .w-copyright .logo {
+				display: inline-block;
+			}
+			.w-copyright .copyright {
+				margin-top: 18px;
+				float: right;
+				text-align: right;
+				line-height: 18px;
+			}
+			.w-copyright .copyright, .w-copyright .copyright p {
+				color: #fff;
+				font-size: 12px;
+			}
+			.w-copyright .copyright .police {
+				display: block;
+				height: 20px;
+				color: #7e8394;
+				margin-top: 3px;
+			}
+			.w-copyright .copyright .police img {
+				margin-right: 5px;
+			}
+			.w-copyright .copyright .police img, .w-copyright .copyright .police span {
+				display: inline-block;
+				line-height: 20px;
+				vertical-align: middle;
+			}
+			.w-copyright .copyright, .w-copyright .copyright p {
+				color: #fff;
+				font-size: 12px;
+			}
+			.toolbar{
+				position: fixed;
+				right: 0px;
+				top:400px;
+			}
+			.fanding{
+				width: 50px;
+				padding: 5px;
+				position: relative;
+				cursor: pointer;
+				background: #fff;
+			}
+			.fanding div.pos-a{
+				top:0px;
+				right: 48px;
+				width: 100px;
+				background: #fb923f;
+				text-align: center;
+				line-height: 50px;
+				color: #fff;
+				min-height:50px;
+				display: none;
+			}
+			.saddress{
+				/*width: 100%;
+				height: 728px;
+				background: url(images/address.png) no-repeat;
+				background-size: 100%;*/
+				position: relative;
+			}
+			.emal{
+				top: 35%;
+				left: 31%;
+				width: 400px;
+				height: 108px;
+				border:1px solid #eee;
+				background: rgba(0,0,0,.5);
+				border-radius:13px;
+			}
+			.emal p,.emal p a{
+				color: aliceblue;
+				font-size: 10px;
+			}
+			.emal p a:hover{
+				color: darksalmon;
+			}
+			.weizhi1{
+				top: 44%;
+				left: 22%;
+				width: 86px;
+			}
+			.weizhi2{
+				top: 68%;
+				left: 38%;
+				width: 86px;
+			}
+			.weizhi3{
+				top: 68%;
+				left: 64%;
+				width: 86px;
+			}
+			.xian{
+				top: 43%;
+				left: 25%;
+				width: 42%;
+			}
+			.biaoti{
+				top: 6%;
+				left: 45%;
+				width: 8%;
+			}
+			.ditiekou{
+				top: 90%;
+				left: 62%;
+				width: 171px;
+				opacity: 0;
+			}
+			.xinanjiao{
+				top: 90%;
+				left: 39%;
+				width: 108px;
+				opacity: 0;
+			}
+			.gongsi{
+				top: 90%;
+				left: 22%;
+				width:60px;
+				opacity: 0;
+			}
+		</style>
+	</head>
+	<body style=''>
+		
+		<div id="header">
+			<div class="container">
+				<div class="logo f-l" >
+					<img src="images/logo-white.png" alt="">
+				</div>
+				
+				<ul class="f-r sscroll">
+					
+					<li class="as"><a href="javascript:void(0);">业务流程</a></li>
+					<li class="as"><a href="javascript:void(0);">客户服务</a></li>
+					<li class="as"><a href="javascript:void(0);">联系我们</a></li>
+					<li>
+						<a href="" class="anniu orange">登录</a>
+					</li>
+					<li>
+						<a href="" class="anniu white">注册</a>
+					</li>
+				</ul>
+				<ul class='f-r'>
+					<li class="as"><a href="#">首页</a></li>
+					<li class="as smenu" style="height:60px;">
+						<a href="javascript:void(0);">解决方案 <span class="caret"></span></a>
+						<ul class="pos-a caidan" style="display:none">
+							<li>
+								<a href="mes.html" style="padding-top:15px; padding-bottom:15px;">
+									<span>
+										<img src="images/1_icon.png" width="18" style="margin-right:5px;">
+									</span>
+									MES智慧车间解决方案
+								</a>
+							</li>
+							<li>
+								<a href="scm.html" style="padding-top:15px;padding-bottom:15px;">
+									<span>
+										<img src="images/4_icon.png" width="18" style="margin-right:5px;">
+									</span>
+									SCM智能采购解决方案
+								</a>
+							</li>
+							<li>
+								<a href="eamm.html" style="padding-top:15px;padding-bottom:15px;">
+									<span>
+										<img src="images/5_icon.png" width="18" style="margin-right:5px;">
+									</span>
+									EAMM++设备维保智能解决方案
+								</a>
+							</li>
+							<li>
+								<a href="aps.html" style="padding-top:15px;padding-bottom:15px;">
+									<span>
+										<img src="images/6_icon.png" width="18" style="margin-right:5px;">
+									</span>
+									APS智能计划排程解决方案
+								</a>
+							</li>
+							<li>
+								<a href="crm.html" style="padding-top:15px;padding-bottom:15px;">
+									<span>
+										<img src="images/7_icon.png" width="18" style="margin-right:5px;">
+									</span>
+									CRM销售/客户/订单管理解决方案
+								</a>
+							</li>
+							<li>
+								<a href="lims.html" style="padding-top:15px;padding-bottom:15px;">
+									<span>
+										<img src="images/8_icon.png" width="18" style="margin-right:5px;">
+									</span>
+									LIMS无纸化试验室解决方案
+								</a>
+							</li>
+							<li>
+								<a href="iis.html" style="padding-top:15px;padding-bottom:15px;">
+									<span>
+										<img src="images/9_icon.png" width="18" style="margin-right:5px;">
+									</span>
+									IIS智能仓储解决方案
+								</a></li>
+							<li>
+								<a href="ems.html" style="padding-top:15px;padding-bottom:15px;">
+									<span>
+										<img src="images/10_icon.png" width="18" style="margin-right:5px;">
+									</span>
+									EMS能源管理解决方案
+								</a>
+							</li>
+							<li>
+								<a href="bi.html" style="padding-top:15px;padding-bottom:15px;">
+									<span>
+										<img src="images/11_icon.png" width="19" style="margin-right:5px;">
+									</span>
+									BI物联网管理解决方案
+								</a>
+							</li>
+							<li>
+								<a href="ibeacon.html" style="padding-top:15px;padding-bottom:15px;">
+									<span>
+										<img src="images/12_icon.png" width="19" style="margin-right:5px;">
+									</span>
+									IBEACON人员管理解决方案
+								</a>
+							</li>
+							<li>
+								<a href="mr.html" style="padding-top:15px;padding-bottom:15px;">
+									<span>
+										<img src="images/13_icon.png" width="17" style="margin-right:5px;">
+									</span>
+									MR三维虚拟智能系统解决方案
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id='article'>
+			
+			<div id='video'>
+				<div class="video">
+					<video id='video1' autoplay="autoplay" loop="loop" width="100%">
+						<source src="images/740098_VJshi_77e91869030eca970fdbdcd3c22c313c.mp4">
+					</video>
+					<div class="cover">
+
+						<div class="article">
+							<h1>工厂家&nbsp;&nbsp;中国智能制造的专家</h1>
+							<h3 class="mt-20">提供全面专业的智造解决方案</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div s='process'>
+				<img src="images/banner2.png" alt="" width="100%">
+			</div>
+			<div>
+				<img src="images/3bg.png" alt="" width="100%">
+			</div>
+			<div s='process' class='bg4'>
+				<div class='container'>
+					<div class='mt-20'>
+						<h1 class='stitle'>合作项目</h1>
+						<h4 class='ssubhead'>PROJECT</h4>
+						<p class='text-c mt-20 synopsis'>
+							IMWT的客户遍布全国各地,我们已经成功该着多家制造企业的制造闭环系统 , 经过多年的市场检验,多次获客户好评,并一直使用我们提供<br>的系统至今 , 针对不同行业 , 我们的重点方向为 : 智慧工厂 智慧矿山 智慧度假村等项目
+						</p>
+					</div>
+					<div class='pos-r'>
+						<div class='feiji'>
+							<div class="feismall feismall2">2</div>
+							<div class="feismall feismall3">3</div>
+							<div class="feismall feismall1">1</div>
+						</div>
+						<div class='dizuo'>
+							<img src="images/dizuo.png" alt=""  width="100%">
+						</div>
+					</div>
+					<div style='width:600px;margin:30px auto 0px;position: relative;left: 34px;'>
+						<div class='f-l sthree'>
+							<ul class='clearfix'>
+								<li class='shan1'><img src="images/jdt1.png"></li>
+								<li class='shan1'><img src="images/jdt2.png"></li>
+								<li class='shan1'><img src="images/jdt3.png"></li>
+								<li class='shan1'><img src="images/jdt4.png"></li>
+							</ul>
+							<p><i>1 </i>智慧工厂</p>
+						</div>
+						<div class='f-l sthree'>
+							<ul class='clearfix'>
+								<li class='shan2'><img src="images/jdt1.png"></li>
+								<li class='shan2'><img src="images/jdt2.png"></li>
+								<li class='shan2'><img src="images/jdt3.png"></li>
+								<li class='shan2'><img src="images/jdt4.png"></li>
+							</ul>
+							<p><i>2 </i>智慧矿山</p>
+						</div>
+						<div class='f-l sthree'>
+							<ul class='clearfix'>
+								<li class='shan3'><img src="images/jdt1.png"></li>
+								<li class='shan3'><img src="images/jdt2.png"></li>
+								<li class='shan3'><img src="images/jdt3.png"></li>
+								<li class='shan3'><img src="images/jdt4.png"></li>
+							</ul>
+							<p><i>3 </i>智慧度假村</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div s='process' class="saddress">
+				<img src="images/address.png" alt="" width="100%">
+				<img src="images/title.png" class="pos-a biaoti" style='display:none' alt="">
+				<img src="images/weizhi.png"  class='pos-a weizhi1' style='display:none' alt="">
+				<img src="images/ditiekou.png" class='pos-a ditiekou' alt="">
+				<img src="images/xinanjiao.png" class='pos-a xinanjiao' alt="">
+				<img src="images/gongsi.png" class='pos-a gongsi' alt="">
+				<img src="images/weizhi.png"  class='pos-a weizhi2' style='display:none' alt="">
+				<img src="images/weizhi.png"  class='pos-a weizhi3' style='display:none' alt="">
+				<img src="images/line.png" style='display:none' class="pos-a xian"  alt="">
+				<div style='display:none' class='pos-a emal'>
+					<p style="margin-top: 33px;margin-left: 30px;">电子邮件/Email : <a href="">sales@imworktech.com</a> </p>
+					<p style="margin-top: 10px;margin-left: 30px;">地址/Address : 北京市丰台区桥南科学城星火路1号昌宁大厦4层Q406-2</p>
+				</div>
+			</div>
+		</div>
+		<div class="w-copyright">
+			<div class="container">
+				<div class="logo">
+					<img src="images/logo-white.png">
+				</div>
+				<div class="copyright">
+					<p>公司地址：北京市丰台区区星火路甲63号卫星大厦7层703（100190） 热线电话：400 186 9000 / +86（010）5980 2699</p><p>© Copyright 2012-2017 北京畅哲科技科技有限责任公司 京ICP备12021815号-2</p>
+					<div class="police">
+						<img src="images/police.png">
+						<span>京公网安备 11010802020043号</span>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="toolbar" style="display: block;">
+			<div class='fanding'>
+				<img src="images/fd1.png" width="100%">
+				<div class='pos-a'>返回顶部</div>
+			</div>
+			<div class='fanding mt-10'>
+				<img src="images/erweima.png" width="100%">
+				<div class='pos-a' style='right:50px;width:150px'>
+					<p>手机扫码下载</p>
+					<img src="images/shaoma.jpg" style='margin-bottom:10px'>
+				</div>
+			</div>
+		</div>
+		<script src="kuangjia/node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="kuangjia/node_modules/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+		<script src="kuangjia/html5shiv.js"></script>
+		<script>
+			
+			var myVid=document.getElementById("video1");
+			myVid.volume=0; 
+			var shead=document.getElementById('header');
+			var winHeight=document.body.clientHidth||document.documentElement.clientHeight;
+			var process=$('div[s="process"]');
+			var feiOne=true;//飞机飞一次
+			var shanOne=true;
+			var indd=0;//进度条闪烁
+			console.log(process)
+			window.onscroll = function(){
+				var to = document.body.scrollTop || document.documentElement.scrollTop;
+				if(to>$(shead).innerHeight()){
+					shead.style.height=80+'px';
+					shead.style.background='#fff';
+					$('#header').css('box-shadow', '0 0 8px rgba(0,0,0,.3)');
+					$('#header .as a').addClass('sblack')
+					$('.logo img').attr('src','images/logo-blue.png')
+				}
+				if(to<$(shead).innerHeight()){
+					shead.style.height='auto';
+					shead.style.background='none';
+					$('#header .as a').removeClass('sblack');
+					$('#header').css('box-shadow', 'none');
+					$('.logo img').attr('src','images/logo-white.png')
+				}
+				if(to<$('#video').innerHeight()){
+					$('.toolbar').css('display','none');
+				}else{
+					$('.toolbar').css('display','block');
+				}
+				if(to>(process.eq(1).offset().top-winHeight/2)&&feiOne){
+					feiOne=false;
+					$('.feiji').animate({
+						top:80
+					},1000).animate({
+						top:50
+					},800).animate({
+						top:80
+					},600);
+					$('.feismall1').delay(2300).fadeIn(300);
+					$('.feismall2').delay(2300).fadeIn(300).animate({
+						right: '45%',
+						top: '183px'
+					});
+					$('.feismall3').delay(2300).fadeIn(300).animate({
+						right: '35%',
+						top: '282px'
+					});
+				}
+				if(to>(process.eq(2).offset().top-winHeight/2)&&shanOne){
+					shanOne=false;
+					$('.weizhi3').fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+					$('.ditiekou').animate({
+						opacity:'1',
+						top:'79%'
+					},1000);
+					$('.weizhi2').delay(500).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100)
+					$('.xinanjiao').delay(500).animate({
+						opacity:'1',
+						top:'80%'
+					},1000);
+					$('.weizhi1').delay(1000).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+					$('.gongsi').delay(1000).animate({
+						opacity:'1',
+						top:'57%'
+					},1000);
+					$('.xian').delay(1500).fadeIn()
+					$('.emal').delay(2000).fadeIn()
+					$('.biaoti').delay(2000).fadeIn()
+				}
+			}
+			
+			$('.sscroll .as a').bind('click',function(){
+				var ind=$(this).parent('li').index();
+				/*if(ind==0||ind==1)
+					ind=2;*/
+				var scrollH=process.eq(ind).offset().top;
+				$('body,html').animate({
+					scrollTop: scrollH-$(shead).innerHeight(),
+				}, 500);
+			})
+			$('.fanding').eq(0).mouseenter(function(){
+				$(this).css('background','#fb923f');
+				$(this).css('border','#fb923f');
+				$(this).children('div').show();
+				$(this).children('img').attr('src','images/fd.png');
+			}).mouseleave(function(){
+				$(this).css('background','#fff');
+				$(this).children('div').hide();
+				$(this).children('img').attr('src','images/fd1.png');
+			})
+			$('.fanding').eq(1).mouseenter(function(){
+				$(this).css('background','#fb923f');
+				$(this).css('border','#fb923f');
+				$(this).children('div').show();
+				$(this).children('img').attr('src','images/erweima2.png');
+			}).mouseleave(function(){
+				$(this).css('background','#fff');
+				$(this).children('div').hide();
+				$(this).children('img').attr('src','images/erweima.png');
+			})
+			$('.fanding').eq(0).bind('click',function(){
+				$('body,html').animate({
+					scrollTop: 0
+				}, 500);
+			})
+			$('.smenu').mouseenter(function(){
+				$('.caidan').show();
+			}).mouseleave(function(){
+				$('.caidan').hide();
+			})
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			/*setInterval(function(){
+				$('.shan1').eq(indd).css('display','block')
+				$('.shan2').eq(indd).css('display','block')
+				$('.shan3').eq(indd).css('display','block')
+				indd++;
+				if(indd>4){
+					$('.sthree ul li').css('display','none');
+					indd=0;
+				}
+			},500)*/
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</script>
+	</body>
+</html>
